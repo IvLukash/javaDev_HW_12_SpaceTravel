@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+}
+
+group = 'goit.edu'
+version = '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    implementation 'org.hibernate.orm:hibernate-core:7.2.0.Final'
+
+    implementation 'com.h2database:h2:2.3.232'
+
+    implementation 'org.flywaydb:flyway-core:11.20.1'
+
+    compileOnly 'org.projectlombok:lombok:1.18.42'
+    annotationProcessor 'org.projectlombok:lombok:1.18.42'
+}
+
+test {
+    useJUnitPlatform()
+}
